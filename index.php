@@ -142,6 +142,24 @@ include_once('layout/header.php');
   <script src="<?php echo GetHostURL(); ?>/_assets_/vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo GetHostURL(); ?>/_assets_/vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="<?php echo GetHostURL(); ?>/_assets_/vendor/sb-admin-2/js/demo/datatables-demo.js"></script>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="LogoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="LogoutModalLabel">Logout</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Are you sure you want to logout and exit the system?</div>
+        <div class="modal-footer">
+          <a class="btn btn-primary" href="<?php echo GetURL(); ?>/logout">Yes</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <?php } ?>
 
   <script>
