@@ -41,7 +41,7 @@ include_once('layout/header.php');
 
                 if (DatabaseNumRows($name) > 0) {
                   $row = DatabaseFetchArray($name);
-                  $_SESSION['username'] = ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']);
+                  $_SESSION['username'] = ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension'], true);
                 } else {
                   $_SESSION['username'] = DatabaseFetchArray(RetrieveSchool($user['id']))[0];
                 }
