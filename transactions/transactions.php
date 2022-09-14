@@ -14,7 +14,9 @@ AddContentTitle('Transactions', true, CreateCustomURL('new-transaction'), 'New T
 
   AddCard('Outgoing Transactions', CreateCustomURL('outgoing-transactions'), 'fa-file-upload', 'warning', true, DatabaseNumRows(RetrieveOutgoingTransactions($_SESSION['userportal'])));
 
-  AddCard('Ongoing Transactions', CreateCustomURL('ongoing-transactions'), 'fa-tasks', 'danger', true, DatabaseNumRows(RetrieveOngoingTransactions($_SESSION['userportal'])));
+  $ongoing = $_SESSION['userportal'] == 'sds' ? RetrieveOngoingTransactions() : RetrieveOngoingTransactions($_SESSION['userportal']);
+
+  AddCard('Ongoing Transactions', CreateCustomURL('ongoing-transactions'), 'fa-tasks', 'danger', true, DatabaseNumRows($ongoing));
 
   AddCard('Completed Transactions', CreateCustomURL('completed-transactions'), 'fa-check-circle', 'secondary');
 
