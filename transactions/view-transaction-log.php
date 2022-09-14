@@ -32,7 +32,7 @@ include_once('functions/strings.php');
           if (DatabaseNumRows($section) > 0) {
             echo DatabaseFetchArray($section)['section'];
           } else {
-            $school = DatabaseFetchArray(RetrieveSchool($transaction['section']))['school'];
+            $school = DatabaseFetchArray(RetrieveSchool($transaction['user']))['school'];
             echo $school;
           }
           ?>
@@ -86,8 +86,13 @@ include_once('functions/strings.php');
             if (DatabaseNumRows($sender) > 0) {
               echo DatabaseFetchArray($sender)['section'];
             } else {
-              $school = DatabaseFetchArray(RetrieveSchool($log['from']))['school'];
-              echo $school;
+              $sender = RetrieveSchool($log['from']);
+              if (DatabaseNumRows($sender) == 1) {
+                $school = DatabaseFetchArray($sender);
+              } else {
+                $school = DatabaseFetchArray(RetrieveSchool($log['user']));
+              }
+              echo $school['school'];
             }
             ?>
             </td>
