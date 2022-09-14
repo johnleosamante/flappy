@@ -3,7 +3,7 @@
 ?>
 
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo GetURL(); ?>">
-  <img class="sidebar-brand-icon" src="<?php echo GetHostURL(); ?>/_assets_/images/Division.png" title="<?php echo GetDivision(); ?>" width="60">
+  <img class="sidebar-brand-icon" src="<?php echo GetURL(); ?>/assets/images/Division.png" title="<?php echo GetDivision(); ?>" width="60">
   <div class="sidebar-brand-text mx-3" title="<?php echo GetTitle(); ?>"><?php echo GetAlias(); ?></div>
 </a>
 
