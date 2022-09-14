@@ -24,7 +24,7 @@ include_once('functions/database/transaction.php');
                                     
         <tbody>
         <?php
-        $query = RetrieveCompletedTransactions($_SESSION['userportal']);
+        $query = $_SESSION['userportal'] == 'sds' ? RetrieveCompletedTransactions() : RetrieveCompletedTransactions($_SESSION['userportal']);
 
         while ($row = DatabaseFetchArray($query)) : ?>
           <tr>
