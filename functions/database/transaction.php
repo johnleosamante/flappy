@@ -35,12 +35,22 @@ function RetrieveOutgoingTransactions($section) {
   return mysqli_query(GetConnection(), "SELECT tbltransaction.id, tbltransaction.description, tbltransactionlog.from, tbltransactionlog.to, tbltransactionlog.user, tbltransactionlog.datetime, tbltransaction.purpose, tbltransactionlog.status FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransactionlog.from='" . $section . "' AND (tbltransactionlog.status='ongoing' OR tbltransactionlog.status='forwarded') AND tbltransactionlog.remark='new';");
 }
 
-function RetrieveCompletedTransactions($section) {
-  return mysqli_query(GetConnection(), "SELECT tbltransaction.id, tbltransaction.description, tbltransaction.datetime AS `postedon`, tbltransactionlog.datetime AS `completedon` FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransaction.section='" . $section . "' AND tbltransactionlog.status='approved' AND tbltransactionlog.remark='done';");
+function RetrieveCompletedTransactions($section='') {
+  if ($section == '') {
+    $sql = "SELECT tbltransaction.id, tbltransaction.description, tbltransaction.datetime AS `postedon`, tbltransactionlog.datetime AS `completedon` FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransactionlog.status='approved' AND tbltransactionlog.remark='done';";
+  } else {
+    $sql = "SELECT tbltransaction.id, tbltransaction.description, tbltransaction.datetime AS `postedon`, tbltransactionlog.datetime AS `completedon` FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransaction.section='" . $section . "' AND tbltransactionlog.status='approved' AND tbltransactionlog.remark='done';";
+  }
+  return mysqli_query(GetConnection(), $sql);
 }
 
-function RetrieveOngoingTransactions($section) {
-  return mysqli_query(GetConnection(), "SELECT tbltransaction.id, tbltransaction.description, tbltransactionlog.from, tbltransactionlog.to, tbltransactionlog.user, tbltransactionlog.datetime, tbltransaction.purpose, tbltransactionlog.status FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransaction.section='" . $section . "' AND tbltransactionlog.status<>'approved' AND tbltransactionlog.remark='new';");
+function RetrieveOngoingTransactions($section='') {
+  if ($section == '') {
+    $sql = "SELECT tbltransaction.id, tbltransaction.description, tbltransaction.section, tbltransactionlog.from, tbltransactionlog.to, tbltransactionlog.user, tbltransactionlog.datetime, tbltransaction.purpose, tbltransactionlog.status FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransactionlog.status<>'approved' AND tbltransactionlog.remark='new';";
+  } else {
+    $sql = "SELECT tbltransaction.id, tbltransaction.description, tbltransactionlog.from, tbltransactionlog.to, tbltransactionlog.user, tbltransactionlog.datetime, tbltransaction.purpose, tbltransactionlog.status FROM tbltransactionlog INNER JOIN tbltransaction ON tbltransactionlog.code = tbltransaction.id WHERE tbltransaction.section='" . $section . "' AND tbltransactionlog.status<>'approved' AND tbltransactionlog.remark='new';";
+  }
+  return mysqli_query(GetConnection(), $sql);
 }
 
 function RetrieveReceivedTransactions($section) {
