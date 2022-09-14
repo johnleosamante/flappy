@@ -24,7 +24,7 @@ include_once('functions/database/transaction.php');
                                     
         <tbody>
           <?php
-          $query = RetrieveOngoingTransactions($_SESSION['userportal']);
+          $query = $_SESSION['userportal'] == 'sds' ? RetrieveOngoingTransactions() : RetrieveOngoingTransactions($_SESSION['userportal']);
 
           while ($row = DatabaseFetchArray($query)) : ?>
           <tr>
@@ -34,7 +34,9 @@ include_once('functions/database/transaction.php');
             <td class="text-center"><?php echo $row['purpose']; ?></td>
             <td>
               <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-transaction-log', $row['id']); ?>" title="View Transaction Log"><i class="fas fa-eye" aria-hidden="true"></i></a>
-              <a class="text-xs btn btn-info d-block mt-2" href="<?php echo GetURL() . '/transactions/print?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($transaction['id'])); ?>" target="_blank" title="Print Transaction Code"><i class="fas fa-print"></i></a>
+            <?php if ((isset($row['section']) && $row['section'] == $_SESSION['userportal']) || $row['user'] == $_SESSION['userid']) : ?>
+              <a class="text-xs btn btn-info d-block mt-2" href="<?php echo GetURL() . '/transactions/print?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($row['id'])); ?>" target="_blank" title="Print Transaction Code"><i class="fas fa-print"></i></a>
+            <?php endif; ?>
             </td>
           </tr>
           <?php endwhile; ?>
