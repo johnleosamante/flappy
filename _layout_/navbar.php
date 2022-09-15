@@ -37,4 +37,4 @@
       </div>
     </li>
   </ul>
-</nav>
+</nav><!-- .navbar -->

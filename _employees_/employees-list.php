@@ -1,11 +1,11 @@
 <?php
-# employees/employees.php
+# employees/employees-list.php
 ?>
 
 <div class="card border-left-primary shadow mb-4">
   <div class="card-header py-3">
     <?php AddContentTitle('Employee List', true,  $_SERVER['HTTP_REFERER']); ?>
-  </div>
+  </div><!-- .card-header -->
 
   <div class="card-body">
     <div class="table-responsive">
@@ -21,23 +21,22 @@
           </tr>
         </thead>
 
-        <tbody>
-        <?php
-        include_once('functions/database/employee.php');
-        include_once('functions/strings.php');
+        <tbody><?php
+          include_once('functions/database/employee.php');
+          include_once('functions/strings.php');
 
-        switch ($url) {
-          case 'non-user-employees-list':
-            $query = RetrieveNonUserEmployees();
-            break;
-          default:
-            $query = RetrieveEmployees();
-            break;
-        }
-        
-        $no = 0;
-        while ($row = DatabaseFetchArray($query)) { 
-          $no++; ?>
+          switch ($url) {
+            case 'non-user-employees-list':
+              $query = RetrieveNonUserEmployees();
+              break;
+            default:
+              $query = RetrieveEmployees();
+              break;
+          }
+          
+          $no = 0;
+          while ($row = DatabaseFetchArray($query)) { 
+            $no++; ?>
           <tr class="text-uppercase">
             <td class="text-center"><?php echo $no; ?></td>
             <td><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], ); ?></td>
@@ -52,7 +51,7 @@
             <?php endif; ?>
             </td>
           </tr>
-        <?php } ?>
+          <?php } ?>
         </tbody>
 
         <tfoot>
@@ -65,7 +64,7 @@
             <th>Action</th>
           </tr>
         </tfoot>
-      </table>
-    </div>
-  </div>
-</div>
+      </table><!-- .table -->
+    </div><!-- .table-responsive -->
+  </div><!-- .card-body -->
+</div><!-- .card -->

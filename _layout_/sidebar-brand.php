@@ -14,9 +14,9 @@
 <hr class="sidebar-divider d-none d-md-block my-0">
 
 <?php 
-  AddNavigationItem(isset($url) && $url == 'transactions', CreateCustomURL('transactions'), 'Transactions', 'fa-exchange-alt');
+  AddNavigationItem(isset($url) && str_contains($url, 'transaction'), CreateCustomURL('transactions'), 'Transactions', 'fa-exchange-alt');
   
   if (isset($_SESSION['userportal']) && $_SESSION['userportal'] == 'ict') {
-    AddNavigationItem(isset($url) && $url == 'users', CreateCustomURL('users'), 'Users', 'fa-user');
+    AddNavigationItem(isset($url) && str_contains($url, 'user'), CreateCustomURL('users'), 'Users', 'fa-users');
   }
 ?>

@@ -1,8 +1,6 @@
 <?php
 # layout/error.php
-
 include_once('../functions/functions.php');
-
 $code = http_response_code();
 $error = '';
 
@@ -44,14 +42,14 @@ include_once('../layout/header.php');
           <p class="text-gray-500 mb-0 px-3">An error has been encountered.</p>
           <p class="text-gray-500 mb-3 px-3">Please go back to the home page instead.</p>
           <a class="btn btn-secondary rounded" href="<?php echo GetURL(); ?>" title="Go to DepEd Dipolog City Data Management System Home Page">Home</a>
-        </div>
-      </div>
-    </div>
+        </div><!-- .text-center -->
+      </div><!-- .row -->
+    </div><!-- #layoutAuthentication_content -->
 
     <div id="layoutAuthentication_footer">
       <?php include_once('../layout/footer.php'); ?>
-    </div>
-  </div>
+    </div><!-- #layoutAuthenticaton_footer -->
+  </div><!-- #layoutAuthentication -->
 
   <?php include_once('../layout/javascripts.php'); ?>
 </body>

@@ -48,6 +48,13 @@ if (!isset($url) || $url == 'dashboard') {
     case 'non-user-employees-list':
       $file = 'employees/employees-list';
       break;
+    case 'schools-list':
+    case 'non-user-schools-list':
+      $file = 'schools/schools-list';
+      break;
+    case 'new-school-user':
+      $file = 'schools/new-school-user';
+      break;
     default:
       $file = 'dashboard';
   }

@@ -18,4 +18,8 @@ function ToName($lname, $fname, $mname='', $ext='', $fnamefirst=false, $mi=true)
     return $lname . ToString($fname, ', ') . ToString($ext, ' ') . $mname;
   }
 }
+
+function ToAddress($lot, $street, $subdivision, $barangay, $city, $province='') {
+  return ToString($lot, '', ', ') . ToString($street, '', ', ') . ToString($subdivision, '', ', ') . ToString($barangay, '', ', ') . ToString($city) . ToString($province, ', '); 
+}
 ?>

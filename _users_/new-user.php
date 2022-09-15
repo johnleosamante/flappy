@@ -1,6 +1,5 @@
 <?php
 # users/new-user.php
-
 ?>
 
 <div class="col-lg-12">
@@ -17,11 +16,11 @@
           $status = '<div class="alert alert-danger">Password does not match!</div>';
           include_once('new-user-form.php');
         } else {
-          include_once('functions/database/user.php');
+          include_once('_functions_/database/db_user.php');
           
           if (DatabaseNumRows(RetrieveUser($_GET['id'])) == 0) {
-            include_once('functions/database/accountrole.php');
-            include_once('functions/database/log.php');
+            include_once('_functions_/database/db_accountrole.php');
+            include_once('_functions_/database/db_log.php');
             $datetime = GetDateTime();
 
             CreateAccount($_GET['id'], $_POST['employeeemail'], HashPassword($_POST['employeepassword']), $_POST['employeeportal'], date('Y-m-d H:i:s', strtotime('+1 YEAR', strtotime($datetime))));

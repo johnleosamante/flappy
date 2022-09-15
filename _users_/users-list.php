@@ -1,6 +1,5 @@
 <?php
 # users/user-list.php
-
 $portal = str_replace('-users', '', $url);
 $school = false;
 
@@ -18,7 +17,11 @@ if ($portal == 'school') {
     <?php AddContentTitle($title, true, CreateCustomURL('users')); ?>
   </div>
 
-  <div class="card-body">
+  <div class="card-body"><?php
+    if ($portal == 'school') {
+      AddButton(CreateCustomURL('non-user-schools-list'), 'New School User', 'fa-plus');
+    } ?>
+
     <div class="table-responsive">
       <table class="table table-striped table-hover table-bordered mb-0" id="dataTable" width="100%" cellspacing="0">
         <thead>
@@ -42,7 +45,7 @@ if ($portal == 'school') {
                                     
         <tbody>
         <?php
-        include_once('functions/database/user.php');
+        include_once('_functions_/database/db_user.php');
         
         if ($school) {
           $query = RetrieveSchoolUsers();
@@ -58,7 +61,7 @@ if ($portal == 'school') {
           </tr>
           <?php endwhile;
         } else {
-          include_once('functions/strings.php');
+          include_once('_functions_/strings.php');
           $query = RetrieveUsersInformation($portal);
           $no = 0;
           while ($row = DatabaseFetchArray($query)) { 
@@ -66,7 +69,7 @@ if ($portal == 'school') {
           ?>
           <tr>
             <td class="text-center"><?php echo $no; ?></td>
-            <td class="text-uppercase"><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']); ?></td>
+            <td><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']); ?></td>
             <td class="text-center"><?php echo $row['username']; ?></td>
             <td class="text-center"><?php echo $row['position']; ?></td>
             <td class="text-center"><?php echo $row['lastlogin']; ?></td>

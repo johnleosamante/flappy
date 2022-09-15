@@ -34,11 +34,11 @@ function RetrieveUser($id) {
 }
 
 function RetrieveUsers($portal='') {
-  return mysqli_query(GetConnection(), "SELECT * FROM tbluser WHERE status='active' AND portal='" . $portal . "';");
+  return mysqli_query(GetConnection(), "SELECT * FROM tbluser WHERE `status`='active' AND portal='" . $portal . "';");
 }
 
 function RetrieveSchoolUsers() {
-  return mysqli_query(GetConnection(), "SELECT tbluser.id, tblschool.school, tbluser.username, tbluser.lastlogin FROM tblschool INNER JOIN tbluser ON tblschool.schoolid = tbluser.id WHERE tbluser.portal='school';");
+  return mysqli_query(GetConnection(), "SELECT tbluser.id, tblschool.school, tbluser.username, tbluser.lastlogin FROM tblschool INNER JOIN tbluser ON tblschool.schoolid = tbluser.id WHERE tbluser.portal='school' AND tbluser.status='active';");
 }
 
 function RetrieveUserImage($id) {

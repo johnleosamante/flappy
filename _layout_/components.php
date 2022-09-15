@@ -40,6 +40,17 @@ function AddContentTitle($title, $withbutton=false, $link='', $text='Back', $ico
   echo '</div>';
 }
 
+function AddButton($link='', $text='Back', $icon='fa-arrow-circle-left') {
+  echo '<div class="d-sm-flex align-items-center justify-content-between mb-3">';
+    echo '<a href="' . $link . '" class="btn btn-primary btn-icon-split btn-sm">';
+      echo '<span class="icon text-white-50">';
+        echo '<i class="fas ' . $icon . '"></i>';
+      echo '</span>';
+      echo '<span class="text">' . $text . '</span>';
+    echo '</a>';
+  echo '</div>';
+}
+
 function AddNavigationItem($condition, $link, $title, $icon='') {
   $class = $condition ? ' active' : '';
   echo '<li class="nav-item' . $class . '">';

@@ -27,7 +27,7 @@ include_once('functions/strings.php');
 
           CreateTransactionLog($datetime, $_SESSION['userid'], $_SESSION['userportal'], $receiver, $_POST['transactioncode'], 'ongoing');
       ?>
-        <div class="d-sm-flex align-items-center justify-content-between alert alert-success py-3">
+        <div class="d-sm-flex align-items-center justify-content-between alert alert-success py-3 mb-0">
           <span>Transaction successfully saved!</span>
           <a href="<?php echo GetURL() . '/transactions/print?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($_POST['transactioncode'])); ?>" target="_blank" title="Print Transaction Code" class="btn btn-success btn-icon-split btn-sm">
           <span class="icon text-white-50">

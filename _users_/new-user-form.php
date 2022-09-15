@@ -38,10 +38,10 @@ $row = DatabaseFetchArray(RetrieveEmployee($_GET['id']));
   </select>
         
   <label for="employeepassword" class="d-inline-block mt-2">Password</label>
-  <input id="employeepassword" type="password" name="employeepassword" class="form-control" required>
+  <input id="employeepassword" type="password" name="employeepassword" class="form-control" placeholder="Type password" required>
 
-  <label for="employeeconfirmpassword" class="d-inline-block mt-2">Password</label>
-  <input id="employeeconfirmpassword" type="password" name="employeeconfirmpassword" class="form-control" required>
+  <label for="employeeconfirmpassword" class="d-inline-block mt-2">Confirm Password</label>
+  <input id="employeeconfirmpassword" type="password" name="employeeconfirmpassword" class="form-control" placeholder="Retype password" required>
 
   <input type="submit" name="newuser" value="Save User" class="mt-3 btn btn-primary align-right w-100">
 </form>

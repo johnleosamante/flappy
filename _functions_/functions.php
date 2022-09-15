@@ -57,11 +57,11 @@ function GetURL() {
 }
 
 function CreateCustomURL($link) {
-  return GetURL() . '/?' . sha1(GetTitle()) . '&view=' . urlencode(base64_encode($link));
+  return GetURL() . '/?' . sha1(GetTitle()) . '&v=' . urlencode(base64_encode($link));
 }
 
 function CreateCustomGetURL($link, $id) {
-  return GetURL() . '/?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($id)) . '&view=' . urlencode(base64_encode($link));
+  return GetURL() . '/?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($id)) . '&v=' . urlencode(base64_encode($link));
  }
 
 function GetConnection() {
