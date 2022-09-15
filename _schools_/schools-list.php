@@ -27,7 +27,7 @@
         </thead>
 
         <tbody><?php
-          include_once('functions/strings.php');
+          include_once('_functions_/strings.php');
           $query = RetrieveNonUserSchools();
 
           while ($row = DatabaseFetchArray($query)) { ?>

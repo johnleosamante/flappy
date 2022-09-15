@@ -1,11 +1,11 @@
 <?php
-# ../transactions/print/index.php
+# print/transaction/index.php
 
-include_once('../../functions/functions.php');
-require('../../fpdf/fpdf.php');
+include_once('../../_functions_/functions.php');
+require('../../_fpdf_/fpdf.php');
 
-$department_logo = GetHostURL() . '/_assets_/images/Department.png';
-$division_logo = GetHostURL() . '/_assets_/images/Division.png';
+$department_logo = GetURL() . '/assets/images/Department.png';
+$division_logo = GetURL() . '/assets/images/Division.png';
 $page_width = 210;
 $page_height = 297;
 $logo_size = 20;
@@ -14,12 +14,16 @@ foreach ($_GET as $key => $data) {
   $code = strtoupper($_GET[$key] = base64_decode(urldecode($data)));
 }
 
+if (empty($code)) {
+  header('Location:' . GetURL());
+}
+
 $pdf = new FPDF('P', 'mm', array($page_width, $page_height));
 
 $PNG_TEMP_DIR = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'qrtemp' . DIRECTORY_SEPARATOR;
 $PNG_WEB_DIR = 'qrtemp/';
 
-include("../../phpqrcode/qrlib.php");
+include("../../_phpqrcode_/qrlib.php");
 
 if (!file_exists($PNG_TEMP_DIR)) mkdir($PNG_TEMP_DIR);
 

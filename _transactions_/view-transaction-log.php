@@ -1,10 +1,9 @@
 <?php
-# transactions/view-transaction-log.php
-
-include_once('functions/database/transaction.php');
-include_once('functions/database/personal.php');
-include_once('functions/database/school.php');
-include_once('functions/strings.php');
+# _transactions_/view-transaction-log.php
+include_once('_functions_/database/db_transaction.php');
+include_once('_functions_/database/db_personal.php');
+include_once('_functions_/database/db_school.php');
+include_once('_functions_/strings.php');
 ?>
 
 <div class="card border-left-primary shadow mb-4">

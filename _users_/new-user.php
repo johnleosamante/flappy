@@ -1,5 +1,5 @@
 <?php
-# users/new-user.php
+# _users_/new-user.php
 ?>
 
 <div class="col-lg-12">

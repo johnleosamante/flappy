@@ -1,5 +1,5 @@
 <?php
-# layout/content.php
+# _layout_/content.php
 
 if (!isset($url) || $url == 'dashboard') {
   include_once('dashboard.php');
@@ -19,13 +19,12 @@ if (!isset($url) || $url == 'dashboard') {
     case 'forward-transaction':
     case 'approve-transaction':
     case 'transactions':
-      $file = 'transactions/' . $url;
+      $file = '_transactions_/' . $url;
       break;
     case 'users':
     case 'view-user':
     case 'new-user':
-    case 'update-user':
-      $file = 'users/' . $url;
+      $file = '_users_/' . $url;
       break;
     case 'school-users':
     case 'sds-users':
@@ -42,18 +41,18 @@ if (!isset($url) || $url == 'dashboard') {
     case 'personnel-users':
     case 'records-user':
     case 'supply-users':
-      $file = 'users/users-list';
+      $file = '_users_/users-list';
       break;
     case 'employees-list':
     case 'non-user-employees-list':
-      $file = 'employees/employees-list';
+      $file = '_employees_/employees-list';
       break;
     case 'schools-list':
     case 'non-user-schools-list':
-      $file = 'schools/schools-list';
+      $file = '_schools_/schools-list';
       break;
     case 'new-school-user':
-      $file = 'schools/new-school-user';
+      $file = '_schools_/new-school-user';
       break;
     default:
       $file = 'dashboard';

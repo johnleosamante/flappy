@@ -1,9 +1,8 @@
 <?php
-# transactions/new-transaction.php
-
-include_once('functions/database/transaction.php');
-include_once('functions/database/user.php');
-include_once('functions/strings.php');
+# _transactions_/new-transaction.php
+include_once('_functions_/database/db_transaction.php');
+include_once('_functions_/database/db_user.php');
+include_once('_functions_/strings.php');
 ?>
 
 <div class="col-lg-12">
@@ -29,7 +28,7 @@ include_once('functions/strings.php');
       ?>
         <div class="d-sm-flex align-items-center justify-content-between alert alert-success py-3 mb-0">
           <span>Transaction successfully saved!</span>
-          <a href="<?php echo GetURL() . '/transactions/print?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($_POST['transactioncode'])); ?>" target="_blank" title="Print Transaction Code" class="btn btn-success btn-icon-split btn-sm">
+          <a href="<?php echo GetURL() . '/print/transaction?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($_POST['transactioncode'])); ?>" target="_blank" title="Print Transaction Code" class="btn btn-success btn-icon-split btn-sm">
           <span class="icon text-white-50">
             <i class="fas fa-print"></i>
           </span>

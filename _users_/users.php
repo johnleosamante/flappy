@@ -1,5 +1,5 @@
 <?php
-# users/users.php
+# _users_/users.php
 include_once('_functions_/database/db_user.php');
 
 AddContentTitle('Users', true, CreateCustomURL('non-user-employees-list'), 'New User', 'fa-plus');

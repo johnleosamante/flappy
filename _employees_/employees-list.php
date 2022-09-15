@@ -1,5 +1,5 @@
 <?php
-# employees/employees-list.php
+# _employees_/employees-list.php
 ?>
 
 <div class="card border-left-primary shadow mb-4">
@@ -22,8 +22,8 @@
         </thead>
 
         <tbody><?php
-          include_once('functions/database/employee.php');
-          include_once('functions/strings.php');
+          include_once('_functions_/database/db_employee.php');
+          include_once('_functions_/strings.php');
 
           switch ($url) {
             case 'non-user-employees-list':

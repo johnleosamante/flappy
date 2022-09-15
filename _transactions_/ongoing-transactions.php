@@ -1,7 +1,6 @@
 <?php
-# transactions/transaction-locator.php
-
-include_once('functions/database/transaction.php');
+# _transactions_/transaction-locator.php
+include_once('_functions_/database/db_transaction.php');
 ?>
 
 <div class="card border-left-primary shadow mb-4">
@@ -35,7 +34,7 @@ include_once('functions/database/transaction.php');
             <td>
               <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-transaction-log', $row['id']); ?>" title="View Transaction Log"><i class="fas fa-eye" aria-hidden="true"></i></a>
             <?php if ((isset($row['section']) && $row['section'] == $_SESSION['userportal']) || $row['user'] == $_SESSION['userid']) : ?>
-              <a class="text-xs btn btn-info d-block mt-2" href="<?php echo GetURL() . '/transactions/print?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($row['id'])); ?>" target="_blank" title="Print Transaction Code"><i class="fas fa-print"></i></a>
+              <a class="text-xs btn btn-info d-block mt-2" href="<?php echo GetURL() . '/print/transaction?' . sha1(GetTitle()) . '&id=' . urlencode(base64_encode($row['id'])); ?>" target="_blank" title="Print Transaction Code"><i class="fas fa-print"></i></a>
             <?php endif; ?>
             </td>
           </tr>

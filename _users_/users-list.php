@@ -1,5 +1,5 @@
 <?php
-# users/user-list.php
+# _users_/user-list.php
 $portal = str_replace('-users', '', $url);
 $school = false;
 

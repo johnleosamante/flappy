@@ -50,10 +50,10 @@ include_once('../_layout_/header.php'); ?>
     </div><!-- #layoutAuthentication_content -->
 
     <div id="layoutAuthentication_footer">
-      <?php include_once('../layout/footer.php'); ?>
+      <?php include_once('../_layout_/footer.php'); ?>
     </div><!-- #layoutAuthentication_footer -->
   </div><!-- #layoutAuthentication -->
 
-  <?php include_once('../layout/javascripts.php'); ?>
+  <?php include_once('../_layout_s/javascripts.php'); ?>
 </body>
 </html>

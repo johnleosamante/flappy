@@ -138,7 +138,7 @@ if ((!isset($_SESSION['userid']) || $_SESSION['userid'] == '') && (!isset($_SESS
     </div><!-- .modal-dialog -->
   </div><!-- #logoutModal -->
 
-  <?php include_once('layout/javascripts.php'); ?>
+  <?php include_once('_layout_/javascripts.php'); ?>
   <script src="<?php echo GetURL(); ?>/assets/vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo GetURL(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="<?php echo GetURL(); ?>/assets/vendor/sb-admin-2/js/demo/datatables-demo.js"></script>

@@ -1,10 +1,9 @@
 <?php
-# transactions/new-transaction.php
-
-include_once('functions/database/transaction.php');
-include_once('functions/database/personal.php');
-include_once('functions/database/school.php');
-include_once('functions/strings.php');
+# _transactions_/new-transaction.php
+include_once('_functions_/database/transaction.php');
+include_once('_functions_/database/personal.php');
+include_once('_functions_/database/school.php');
+include_once('_functions_/strings.php');
 ?>
 
 <div class="col-lg-12">

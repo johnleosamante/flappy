@@ -1,6 +1,7 @@
 <?php
-include_once('functions/database/employee.php');
-include_once('functions/strings.php');
+# _users_/new-user-form.php
+include_once('_functions_/database/db_employee.php');
+include_once('_functions_/strings.php');
 
 $row = DatabaseFetchArray(RetrieveEmployee($_GET['id']));
 ?>
@@ -30,7 +31,7 @@ $row = DatabaseFetchArray(RetrieveEmployee($_GET['id']));
   <label for="employeeusertype" class="d-inline-block mt-2">User Type</label>
   <select id="employeeusertype" name="employeeusertype" class="form-control mb-2" required>
     <?php
-    include_once('functions/database/roles.php');
+    include_once('_functions_/database/db_roles.php');
     $employeerole = RetrieveRoles();
     while ($role = DatabaseFetchArray($employeerole)) : ?>
     <option class="text-capitalize" value="<?php echo $role['id'] == '1' ? '' : $role['id']; ?>"><?php echo $role['value'] == '' ? 'Select user type' : ucwords($role['value']); ?></option>

@@ -1,6 +1,6 @@
 <?php
-# layout/error.php
-include_once('../functions/functions.php');
+# error.php
+include_once('_functions_/functions.php');
 $code = http_response_code();
 $error = '';
 
@@ -28,7 +28,7 @@ switch ($code) {
 }
 
 $page = $error;
-include_once('../layout/header.php');
+include_once('_layout_/header.php');
 ?>
 </head>
 
@@ -47,10 +47,10 @@ include_once('../layout/header.php');
     </div><!-- #layoutAuthentication_content -->
 
     <div id="layoutAuthentication_footer">
-      <?php include_once('../layout/footer.php'); ?>
+      <?php include_once('_layout_/footer.php'); ?>
     </div><!-- #layoutAuthenticaton_footer -->
   </div><!-- #layoutAuthentication -->
 
-  <?php include_once('../layout/javascripts.php'); ?>
+  <?php include_once('_layout_/javascripts.php'); ?>
 </body>
 </html>

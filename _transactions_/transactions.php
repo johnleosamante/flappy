@@ -1,7 +1,6 @@
 <?php
-# transactions/transactions.php
-
-include_once('functions/database/transaction.php');
+# _transactions_/transactions.php
+include_once('_functions_/database/db_transaction.php');
 
 AddContentTitle('Transactions', true, CreateCustomURL('new-transaction'), 'New Transaction', 'fa-plus');
 ?>
