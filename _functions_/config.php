@@ -1,5 +1,5 @@
 <?php
-# functions/config.php
+# _functions_/config.php
 
 # CONSTANTS
 define('DB_SERVER', '124.106.213.148');

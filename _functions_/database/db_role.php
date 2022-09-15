@@ -1,4 +1,6 @@
 <?php
+# _functions_/database/db_role.php
+
 function RetrieveRoleID($role) {
   return mysqli_query(GetConnection(), "SELECT id FROM tblrole WHERE role='" . $role . "' LIMIT 1;");
 }

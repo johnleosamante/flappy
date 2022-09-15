@@ -9,8 +9,8 @@ include_once('../_layout_/header.php'); ?>
 </head>
 
 <body>
-  <div id="layoutAuthentication" class="container min-vh-100">
-    <div id="layoutAuthentication_content" class="d-flex align-items-center">
+  <div id="layoutAuthentication" class="container">
+    <div id="layoutAuthentication_content">
       <div class="row justify-content-center">
         <div class="card col-lg-5 o-hidden border-0 shadow-lg my-5 p-0">
           <div class="card-header p-4">

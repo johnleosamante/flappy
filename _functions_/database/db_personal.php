@@ -1,5 +1,5 @@
 <?php
-# functions/database/personal.php
+# _functions_/database/db_personal.php
 
 # tblpersonal INNER JOIN tblextension
 function RetrieveName($id) {

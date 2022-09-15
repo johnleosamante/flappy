@@ -1,5 +1,5 @@
 <?php
-# functions/database/section.php
+# _functions_/database/db_section.php
 
 # tblsection
 function RetrieveSections() {

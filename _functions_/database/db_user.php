@@ -1,5 +1,5 @@
 <?php
-# functions/database.user.php
+# _functions_/database/db_user.php
 
 function AuthenticateAccount($username, $password) {
   return mysqli_query(GetConnection(), "SELECT * FROM tbluser WHERE BINARY username= BINARY '" . $username . "' AND BINARY password= BINARY PASSWORD('" . $password . "') LIMIT 1;");

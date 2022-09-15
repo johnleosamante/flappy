@@ -1,5 +1,5 @@
 <?php
-# layout/header.php
+# _layout_/header.php
 
 foreach ($_GET as $key => $data) {
   $url = $_GET[$key] = base64_decode(urldecode($data));

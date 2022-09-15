@@ -1,5 +1,5 @@
 <?php
-# functions/database/school.php
+# _functions_/database/db_school.php
 
 # tblschool
 function RetrieveSchools() {

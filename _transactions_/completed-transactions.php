@@ -1,13 +1,12 @@
 <?php
-# transactions/completed-transactions.php
-
-include_once('functions/database/transaction.php');
+# _transactions_/completed-transactions.php
+include_once('_functions_/database/db_transaction.php');
 ?>
 
 <div class="card border-left-primary shadow mb-4">
   <div class="card-header py-3">
     <?php AddContentTitle('Completed Transactions', true, CreateCustomURL('transactions')); ?>
-  </div>
+  </div><!-- .card-header -->
                         
   <div class="card-body">
     <div class="table-responsive">
@@ -22,21 +21,19 @@ include_once('functions/database/transaction.php');
           </tr>
         </thead>
                                     
-        <tbody>
-        <?php
-        $query = $_SESSION['userportal'] == 'sds' ? RetrieveCompletedTransactions() : RetrieveCompletedTransactions($_SESSION['userportal']);
-
-        while ($row = DatabaseFetchArray($query)) : ?>
+        <tbody><?php
+          $query = $_SESSION['userportal'] == 'sds' ? RetrieveCompletedTransactions() : RetrieveCompletedTransactions($_SESSION['userportal']);
+          while ($row = DatabaseFetchArray($query)) : ?>
           <tr>
             <td class="text-uppercase text-center"><?php echo $row['id']; ?></td>
-            <td><?php echo $row['description']; ?></td>
+            <td class="text-capitalize><?php echo $row['description']; ?></td>
             <td class="text-center"><?php echo $row['postedon']; ?></td>
             <td class="text-center"><?php echo $row['completedon']; ?></td>
             <td>
               <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-transaction-log', $row['id']); ?>" title="View Transaction Log"><i class="fas fa-eye"></i></a>
             </td>
           </tr>
-        <?php endwhile; ?>
+          <?php endwhile; ?>
         </tbody>
 
         <tfoot>
@@ -49,6 +46,6 @@ include_once('functions/database/transaction.php');
           </tr>
         </tfoot>
       </table>
-    </div>
-  </div>
-</div>
+    </div><!-- .table-responsive -->
+  </div><!-- .card-body -->
+</div><!-- .card -->

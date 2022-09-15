@@ -1,6 +1,6 @@
 <?php
-include_once('functions/database/employee.php');
-include_once('functions/strings.php');
+include_once('_functions_/database/employee.php');
+include_once('_functions_/strings.php');
 
 $row = DatabaseFetchArray(RetrieveSchool($_GET['id']));
 ?>

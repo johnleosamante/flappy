@@ -1,5 +1,5 @@
 <?php
-# layout/footer.php
+# _layout_/footer.php
 ?>
 
 <footer class="p-4 mt-auto">

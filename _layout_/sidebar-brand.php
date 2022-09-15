@@ -1,5 +1,5 @@
 <?php
-# layout/sidebar-brand.php
+# _layout_/sidebar-brand.php
 ?>
 
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo GetURL(); ?>">

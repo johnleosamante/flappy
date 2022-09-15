@@ -1,5 +1,5 @@
 <?php
-# functions/database/transaction.php
+# _functions_/database/db_transaction.php
 
 # tbltransaction
 function RetrieveTransactions($id) {

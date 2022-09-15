@@ -1,5 +1,5 @@
 <?
-# schools/schools-list.php
+# _schools_/schools-list.php
 ?>
 
 <div class="card border-left-primary shadow mb-4">

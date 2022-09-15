@@ -1,5 +1,5 @@
 <?php
-# functions/functions.php
+# _functions_/functions.php
 
 require_once('config.php');
 

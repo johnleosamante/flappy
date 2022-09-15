@@ -1,5 +1,5 @@
 <?php
-# layout/javascripts.php
+# _layout_/javascripts.php
 ?>
 
 <script src="<?php echo GetURL(); ?>/assets/vendor/jquery/jquery.min.js"></script>

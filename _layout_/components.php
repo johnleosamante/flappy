@@ -1,5 +1,5 @@
 <?php
-# layout/elements.php
+# _layout_/elements.php
 
 function AddCard($title, $link, $icon, $color='primary', $counter=false, $number=0) {
   echo '<div class="col-xl-3 col-md-6 mb-4">';

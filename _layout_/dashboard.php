@@ -1,5 +1,5 @@
 <?php
-# layout/dashboard.php
+# _layout_/dashboard.php
 
 AddContentTitle('Dashboard');
 ?>

@@ -37,18 +37,18 @@
           $no = 0;
           while ($row = DatabaseFetchArray($query)) { 
             $no++; ?>
-          <tr class="text-uppercase">
+          <tr>
             <td class="text-center"><?php echo $no; ?></td>
-            <td><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], ); ?></td>
-            <td class="text-center"><?php echo $row['sex'] ? 'female' : 'male'; ?></td> 
-            <td class="text-center"><?php echo $row['station'] == '' ? GetDivisionOffice() : $row['station']; ?></td>
-            <td class="text-center"><?php echo $row['position']; ?></td>
+            <td class="text-capitalize"><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], ); ?></td>
+            <td class="text-center text-capitalize"><?php echo $row['sex'] ? 'female' : 'male'; ?></td> 
+            <td class="text-center text-capitalize"><?php echo $row['station'] == '' ? GetDivisionOffice() : $row['station']; ?></td>
+            <td class="text-center text-capitalize"><?php echo $row['position']; ?></td>
             <td>
-            <?php if ($url == 'non-user-employees-list') : ?>
-              <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('new-user', $row['id']); ?>" title="Add as user"><i class="fas fa-user-plus"></i></a>
-            <?php else : ?>
+              <?php if ($url == 'non-user-employees-list') : ?>
+                <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('new-user', $row['id']); ?>" title="Add as user"><i class="fas fa-user-plus"></i></a>
+              <?php else : ?>
 
-            <?php endif; ?>
+              <?php endif; ?>
             </td>
           </tr>
           <?php } ?>
@@ -64,7 +64,7 @@
             <th>Action</th>
           </tr>
         </tfoot>
-      </table><!-- .table -->
+      </table>
     </div><!-- .table-responsive -->
   </div><!-- .card-body -->
 </div><!-- .card -->

@@ -1,5 +1,5 @@
 <?php
-# functions/database/employee.php
+# _functions_/database/db_employee.php
 
 function RetrieveNonUserEmployees() {
   return mysqli_query(GetConnection(), "SELECT tblpersonal.id, tblpersonal.lastname, tblpersonal.firstname, tblpersonal.middlename, tblextension.extension, tblpersonal.sex, tblschool.school AS station, tblposition.position FROM tblaccountrole INNER JOIN (((((tblpersonal INNER JOIN tblextension ON tblpersonal.extid = tblextension.id) INNER JOIN tblexperience ON tblpersonal.id = tblexperience.employeeid) INNER JOIN tblposition ON tblexperience.positionid = tblposition.id) INNER JOIN tblassignment ON tblexperience.assignmentid = tblassignment.id) INNER JOIN tblschool ON tblassignment.stationid = tblschool.id) ON tblaccountrole.userid = tblpersonal.id WHERE tblexperience.ispresent=true AND tblaccountrole.roleid=1 AND tblschool.school='' ORDER BY tblpersonal.lastname;");

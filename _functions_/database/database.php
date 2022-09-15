@@ -1,5 +1,5 @@
 <?php
-# functions/database.php
+# _functions_/database/database.php
 
 function DatabaseFetchAssoc($query) {
   return mysqli_fetch_assoc($query);

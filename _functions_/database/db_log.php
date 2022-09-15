@@ -1,4 +1,5 @@
 <?php
+# _function_/database/db_log.php
 
 function CreateLog($userid, $targetid, $operation, $clientid) {
   mysqli_query(GetConnection(), "INSERT INTO tbllog (`datetime`, `userid`, `targetid`, `operation`, `clientid`) VALUES (NOW(), '" . $userid . "', '" . $targetid . "', '" . $operation . "', '" . $clientid . "');");

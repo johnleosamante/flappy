@@ -31,7 +31,7 @@ $row = DatabaseFetchArray(RetrieveEmployee($_GET['id']));
   <label for="employeeusertype" class="d-inline-block mt-2">User Type</label>
   <select id="employeeusertype" name="employeeusertype" class="form-control mb-2" required>
     <?php
-    include_once('_functions_/database/db_roles.php');
+    include_once('_functions_/database/db_role.php');
     $employeerole = RetrieveRoles();
     while ($role = DatabaseFetchArray($employeerole)) : ?>
     <option class="text-capitalize" value="<?php echo $role['id'] == '1' ? '' : $role['id']; ?>"><?php echo $role['value'] == '' ? 'Select user type' : ucwords($role['value']); ?></option>

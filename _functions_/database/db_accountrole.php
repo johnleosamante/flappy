@@ -1,4 +1,6 @@
 <?php
+# _function_/database/db_accountrole.php
+
 function CreateAccountRole($userid, $roleid) {
   mysqli_query(GetConnection(), "INSERT INTO tblaccountrole (userid, roleid) VALUES ('" . $userid . "', '" . $roleid . "');");
 }

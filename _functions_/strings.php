@@ -1,5 +1,5 @@
 <?php
-# functions/strings.php
+# _functions_/strings.php
 
 function ToString($text, $prefix='', $suffix='', $isChar=false) {
   if ($text == '') return '';
