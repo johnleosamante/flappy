@@ -16,10 +16,10 @@ include_once('layout/header.php');
 <body>
   <div id="layoutAuthentication" class="container min-vh-100">
     <div id="layoutAuthentication_content" class="d-flex align-items-center">
-      <div class="row  justify-content-center">
+      <div class="row justify-content-center">
         <div class="card col-lg-5 o-hidden border-0 shadow-lg my-5 p-0">
           <div class="card-header p-4">
-            <img src="<?php echo GetHostURL(); ?>/_assets_/images/Division.png" alt="<?php echo GetDivision(); ?>" class="d-block m-auto" width="50%">
+            <img src="<?php echo GetURL(); ?>/assets/images/Division.png" alt="<?php echo GetDivision(); ?>" class="d-block m-auto" width="50%">
             <h1 class="text-center mb-0"><?php echo $page; ?></h1>
           </div>
 
@@ -139,9 +139,9 @@ include_once('layout/header.php');
 
   <?php include_once('layout/javascripts.php'); ?>
   
-  <script src="<?php echo GetHostURL(); ?>/_assets_/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="<?php echo GetHostURL(); ?>/_assets_/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-  <script src="<?php echo GetHostURL(); ?>/_assets_/vendor/sb-admin-2/js/demo/datatables-demo.js"></script>
+  <script src="<?php echo GetURL(); ?>/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo GetURL(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="<?php echo GetURL(); ?>/assets/vendor/sb-admin-2/js/demo/datatables-demo.js"></script>
 
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="LogoutModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

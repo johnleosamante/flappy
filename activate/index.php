@@ -17,7 +17,7 @@ include_once('../layout/header.php');
       <div class="row  justify-content-center">
         <div class="card col-lg-5 o-hidden border-0 shadow-lg my-5 p-0">
           <div class="card-header p-4">
-            <img src="<?php echo GetHostURL(); ?>/_assets_/images/Division.png" alt="<?php echo GetDivision(); ?>" class="d-block m-auto" width="50%">
+            <img src="<?php echo GetURL(); ?>/assets/images/Division.png" alt="<?php echo GetDivision(); ?>" class="d-block m-auto" width="50%">
             <h1 class="text-center mb-0"><?php echo $page; ?></h1>
           </div>
 
