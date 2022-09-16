@@ -43,42 +43,40 @@ if ($portal == 'school') {
           </tr>
         </thead>
                                     
-        <tbody>
-        <?php
-        include_once('_functions_/database/db_user.php');
-        
-        if ($school) {
-          $query = RetrieveSchoolUsers();
-          while ($row = DatabaseFetchArray($query)) : ?>
-          <tr>
-            <td class="text-center"><?php echo $row['id']; ?></td>
-            <td><?php echo $row['school']; ?></td>
-            <td class="text-center"><?php echo $row['username']; ?></td>
-            <td class="text-center"><?php echo $row['lastlogin']; ?></td>
-            <td>
-              <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-user', $row['id']); ?>" title="View User"><i class="fas fa-eye"></i></a>
-            </td>
-          </tr>
-          <?php endwhile;
-        } else {
-          include_once('_functions_/strings.php');
-          $query = RetrieveUsersInformation($portal);
-          $no = 0;
-          while ($row = DatabaseFetchArray($query)) { 
-            $no++;  
-          ?>
-          <tr>
-            <td class="text-center"><?php echo $no; ?></td>
-            <td><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']); ?></td>
-            <td class="text-center"><?php echo $row['username']; ?></td>
-            <td class="text-center"><?php echo $row['position']; ?></td>
-            <td class="text-center"><?php echo $row['lastlogin']; ?></td>
-            <td>
-              <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-user', $row['id']); ?>" title="View User"><i class="fas fa-eye"></i></a>
-            </td>
-          </tr>
-          <?php }
-        } ?>
+        <tbody><?php
+          include_once('_functions_/database/db_user.php');
+          
+          if ($school) {
+            $query = RetrieveSchoolUsers();
+            while ($row = DatabaseFetchArray($query)) : ?>
+            <tr>
+              <td class="text-center"><?php echo $row['id']; ?></td>
+              <td><?php echo $row['school']; ?></td>
+              <td class="text-center"><?php echo $row['username']; ?></td>
+              <td class="text-center"><?php echo $row['lastlogin']; ?></td>
+              <td>
+                <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-user', $row['id']); ?>" title="View User"><i class="fas fa-eye"></i></a>
+              </td>
+            </tr>
+            <?php endwhile;
+          } else {
+            include_once('_functions_/strings.php');
+            $query = RetrieveUsersInformation($portal);
+            $no = 0;
+            while ($row = DatabaseFetchArray($query)) { 
+              $no++; ?>
+            <tr>
+              <td class="text-center"><?php echo $no; ?></td>
+              <td class="text-capitalize"><?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']); ?></td>
+              <td class="text-center"><?php echo $row['username']; ?></td>
+              <td class="text-center text-capitalize"><?php echo $row['position']; ?></td>
+              <td class="text-center"><?php echo $row['lastlogin']; ?></td>
+              <td>
+                <a class="text-xs btn btn-success d-block" href="<?php echo CreateCustomGetURL('view-user', $row['id']); ?>" title="View User"><i class="fas fa-eye"></i></a>
+              </td>
+            </tr><?php 
+            }
+          } ?>
         </tbody>
 
         <thead>
