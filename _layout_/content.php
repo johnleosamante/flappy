@@ -39,9 +39,12 @@ if (!isset($url) || $url == 'dashboard') {
     case 'ict-users':
     case 'legal-users':
     case 'personnel-users':
-    case 'records-user':
+    case 'records-users':
     case 'supply-users':
       $file = '_users_/users-list';
+      break;
+    case 'inactive-users':
+      $file = '_users_/inactive-users';
       break;
     case 'employees-list':
     case 'non-user-employees-list':
