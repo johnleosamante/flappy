@@ -9,11 +9,11 @@ $row = DatabaseFetchArray(RetrieveEmployee($_GET['id']));
 <form action="" method="post" enctype="multipart/form-data">
   <?php echo $status; ?>
   <label for="employeename" class="d-inline-block">Employee</label>
-  <input id="employeename" type="text" class="form-control text-uppercase" value="<?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']); ?>" readonly>
+  <input id="employeename" type="text" class="form-control" value="<?php echo ToName($row['lastname'], $row['firstname'], $row['middlename'], $row['extension']); ?>" readonly>
   <input type="hidden" name="employeeid" value="<?php echo $_GET['id']; ?>">
 
   <label for="employeeposition" class="d-inline-block mt-2">Position</label>
-  <input id="employeeposition" type="text" class="form-control text-uppercase" value="<?php echo $row['position']; ?>" readonly>
+  <input id="employeeposition" type="text" class="form-control" value="<?php echo $row['position']; ?>" readonly>
 
   <label for="employeeemail" class="d-inline-block mt-2">Email Address</label>
   <input id="employeeemail" name="employeeemail" type="email" class="form-control" value="<?php echo $row['email']; ?>" required>

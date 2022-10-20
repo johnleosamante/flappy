@@ -36,5 +36,7 @@ AddContentTitle('Users', true, CreateCustomURL('non-user-employees-list'), 'New 
   AddCard('Records Section', CreateCustomURL('records-users'), 'fa-edit', 'info', true, DatabaseNumRows(RetrieveUsers('records')));
 
   AddCard('Supply & Property Section', CreateCustomURL('supply-users'), 'fa-box-open', 'warning', true, DatabaseNumRows(RetrieveUsers('supply')));
+  
+  AddCard('Inactive', CreateCustomURL('inactive-users'), 'fa-user-times', 'danger');
   ?>
 </div>
