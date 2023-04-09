@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<font>
+	<info face="Flappy Bird Big Numbers" size="60" bold="0" italic="0" charset="" unicode="1" stretchH="100" smooth="1" aa="1" padding="0,0,0,0" spacing="1,1"/>
+	<common lineHeight="60" base="60" scaleW="256" scaleH="256" pages="1" packed="0"/>
+	<pages>
+		<page id="0" file="bignumbers.png" />
+	</pages>
+	<chars count="10">
+		<char id="48" x="1" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="0"/>
+		<char id="49" x="38" y="1" width="27" height="60" xoffset="0" yoffset="0" xadvance="27" page="0" chnl="0" number="1"/>
+		<char id="50" x="66" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="2"/>
+		<char id="51" x="103" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="3"/>
+		<char id="52" x="140" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="4"/>
+		<char id="53" x="177" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="5"/>
+		<char id="54" x="214" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="6"/>
+		<char id="55" x="251" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="7"/>
+		<char id="56" x="288" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="8"/>
+		<char id="57" x="325" y="1" width="36" height="60" xoffset="0" yoffset="0" xadvance="36" page="0" chnl="0" number="9"/>
+	</chars>
+</font>

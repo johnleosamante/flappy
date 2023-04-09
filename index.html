@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Flappy Bird</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style/main.css">
+	<script src="script/phaser/phaser.min.js"></script>
+	<script src="script/Storage.js"></script>
+	<script src="script/Boot.js"></script>
+	<script src="script/Preloader.js"></script>
+	<script src="script/Play.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var game = new Phaser.Game(489, 870, Phaser.AUTO);
+			
+			game.state.add('Boot', Game.Boot);
+			game.state.add('Preloader', Game.Preloader);
+			game.state.add('Play', Game.Play);
+			
+			game.state.start('Boot');
+		};
+	</script>
+</body>
+</html>
